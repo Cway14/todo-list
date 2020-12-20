@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 
+import sendEdit from "./functions/sendEdit";
+
 const Modal = (props) => {
   const todo = props.todo;
   const [description, changeDescription] = useState(todo.description);
 
   const editTodo = () => {
     todo.description = description;
-    props.sendEdit(todo);
+    sendEdit(todo);
     props.toggleModal();
   };
 
@@ -21,7 +23,7 @@ const Modal = (props) => {
         <div className="py-4 px-20">
           <h1 className="text-3xl w-full text-center">Edit Todo</h1>
           <input
-            className="w-full p-2 h-12 border-b text-xl outline-none"
+            className="w-full p-2 pt-6 h-12 border-b text-xl outline-none"
             placeholder={todo.description}
             onChange={(e) => changeDescription(e.target.value)}
           ></input>
