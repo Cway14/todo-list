@@ -4,7 +4,7 @@ export const addTodo = async (e, description, setTodoList) => {
   e.preventDefault();
   try {
     const body = { description };
-    const response = await fetch("http://192.168.1.26:5000/todos", {
+    const response = await fetch("http://localhost/todos", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -23,7 +23,7 @@ export const sendEdit = async (todo) => {
     const description = todo.description;
     const id = todo.todo_id;
     const body = { description };
-    const response = await fetch(`http://192.168.1.26:5000/todos/${id}`, {
+    const response = await fetch(`http://localhost/todos/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -43,7 +43,7 @@ export const completeTodo = (todo, setTodoList, setCompletedTodos) => {
 
 export const deleteTodo = async (id, setTodoList) => {
   try {
-    const response = await fetch(`http://192.168.1.26:5000/todos/${id}`, {
+    const response = await fetch(`http://localhost/todos/${id}`, {
       method: "DELETE",
     });
     console.log(response);
@@ -57,7 +57,7 @@ export const getTodos = async (setTodoList) => {
   console.log("Called");
   try {
     //get TODOS
-    const response = await fetch("http://192.168.1.26:5000/todos");
+    const response = await fetch("http://localhost/todos");
     const JSONData = await response.json();
     //store TODOS
     setTodoList(JSONData);

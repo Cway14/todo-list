@@ -7,8 +7,6 @@ const pool = require("./db");
 app.use(cors());
 app.use(express.json());
 
-//routes
-
 //create todo
 app.post("/todos", async (req, res) => {
   try {
