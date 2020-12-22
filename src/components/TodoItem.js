@@ -1,8 +1,7 @@
 import React from "react";
 import SVG from "./SVG";
 
-import completeTodo from "../functions/completeTodo";
-import deleteTodo from "./../functions/deleteTodo";
+import { completeTodo, deleteTodo } from "../functions/todoActions";
 
 const TodoItem = (props) => {
   const todo = props.todo;
@@ -23,17 +22,16 @@ const TodoItem = (props) => {
         <button
           className="m-2"
           onClick={() => {
-            completeTodo(
-              todo,
-              props.updateTodoList,
-              props.updateCompletedTodos
-            );
+            completeTodo(todo, props.setTodoList, props.setCompletedTodos);
           }}
         >
           <SVG id={1} />
         </button>
         {/* DELETE button */}
-        <button className="m-2 mr-8" onClick={() => deleteTodo(todo.todo_id)}>
+        <button
+          className="m-2 mr-8"
+          onClick={() => deleteTodo(todo.todo_id, props.setTodoList)}
+        >
           <SVG id={2} />
         </button>
       </div>

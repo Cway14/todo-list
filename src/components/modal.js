@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import sendEdit from "./functions/sendEdit";
+import { sendEdit } from "./../functions/todoActions";
 
 const Modal = (props) => {
   const todo = props.todo;
@@ -9,11 +9,11 @@ const Modal = (props) => {
   const editTodo = () => {
     todo.description = description;
     sendEdit(todo);
-    props.toggleModal();
+    props.setModal();
   };
 
   const closeModal = () => {
-    props.toggleModal();
+    props.setModal();
   };
 
   return (

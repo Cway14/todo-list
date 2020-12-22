@@ -2,41 +2,42 @@ import React, { useState, useEffect } from "react";
 import "./css/tailwind.output.css";
 
 // components
-import Modal from "./modal";
+import Modal from "./components/modal";
 import CompletedTodos from "./components/CompletedTodos";
 import TextInput from "./components/TextInput";
 import TodoList from "./components/TodoList";
 
 // functions
-import getTodos from "./functions/getTodos";
+import { getTodos } from "./functions/todoActions";
+import { getCompletedTodos } from "./functions/completedTodoActions";
 
 function App() {
-  const [todolist, updateTodoList] = useState([]);
-  const [completedTodos, updateCompletedTodos] = useState([]);
-  const [currentTodo, updateCurrentTodo] = useState({});
-  const [showModal, toggleShowModal] = useState(false);
+  const [todoList, setTodoList] = useState([]);
+  const [completedTodoList, setCompletedTodos] = useState([]);
+  const [currentTodo, setCurrentTodo] = useState({});
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    getTodos(updateTodoList);
+    getTodos(setTodoList);
+    getCompletedTodos(setCompletedTodos);
   }, []);
 
   return (
     <div>
       <div className={`${showModal ? "block" : "hidden"}`}>
-        <Modal todo={currentTodo} toggleModal={toggleShowModal} />
+        <Modal todo={currentTodo} setModal={setShowModal} />
       </div>
-      <TextInput updateTodoList={updateTodoList} />
+      <TextInput setTodoList={setTodoList} />
       <TodoList
-        toggleShowModal={toggleShowModal}
-        updateCurrentTodo={updateCurrentTodo}
-        showModal={showModal}
-        todolist={todolist}
-        updateTodoList={updateTodoList}
-        updateCompletedTodos={updateCompletedTodos}
+        setShowModal={setShowModal}
+        setCurrentTodo={setCurrentTodo}
+        todoList={todoList}
+        setTodoList={setTodoList}
+        setCompletedTodos={setCompletedTodos}
       />
       <CompletedTodos
-        completedTodos={completedTodos}
-        updateCompletedTodos={updateCompletedTodos}
+        completedTodos={completedTodoList}
+        setCompletedTodos={setCompletedTodos}
       />
     </div>
   );

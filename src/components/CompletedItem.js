@@ -1,14 +1,14 @@
 import React from "react";
-import deleteCompleted from "../functions/deleteCompleted";
+import { deleteCompleted } from "../functions/completedTodoActions";
 
 const CompletedItem = (props) => {
   const todo = props.todo;
   return (
     <li
-      className="m-2 py-2 rounded-lg bg-gray-100 flex justify-between items-center"
+      className="m-2 py-2 rounded-lg bg-gray-200 flex justify-between items-center"
       key={todo.todo_id}
     >
-      <span className="mx-2 text-xl md:mx-12 md:text-2xl">
+      <span className="mx-2 text-xl line-through text-gray-800 md:mx-12 md:text-2xl">
         {todo.description}
       </span>
       <div className="flex-shrink-0">

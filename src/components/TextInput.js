@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 
 import SVG from "./SVG";
-import addTodo from "./../functions/addTodo";
-import getTodos from "./../functions/getTodos";
+import { addTodo } from "./../functions/todoActions";
 
 const TextInput = (props) => {
   const [description, changeDescription] = useState("");
@@ -10,7 +9,7 @@ const TextInput = (props) => {
     <form
       onSubmit={(e) => {
         if (description) {
-          addTodo(e, description, getTodos, props.updateTodoList);
+          addTodo(e, description, props.setTodoList);
           changeDescription("");
         }
       }}

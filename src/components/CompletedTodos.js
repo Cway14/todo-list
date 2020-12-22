@@ -3,16 +3,11 @@ import { Fragment, useState, useEffect } from "react";
 
 import CompletedItem from "./CompletedItem";
 import ShowCompletedButton from "./ShowCompletedButton";
-import getCompletedTodos from "./../functions/getCompletedTodos";
 
 const CompletedTodos = (props) => {
   const [showCompleted, toggleShowCompleted] = useState(false);
   const updateCompletedTodos = props.updateCompletedTodos;
   const completedTodos = props.completedTodos;
-
-  useEffect(() => {
-    getCompletedTodos(updateCompletedTodos);
-  });
 
   return (
     <Fragment>

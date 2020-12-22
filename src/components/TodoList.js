@@ -4,18 +4,19 @@ import TodoItem from "./TodoItem";
 
 const TodoList = (props) => {
   const editTodo = (todo) => {
-    props.pdateCurrentTodo(todo);
-    props.toggleShowModal(!props.showModal);
+    props.setCurrentTodo(todo);
+    props.setShowModal(true);
   };
 
   return (
     <ul className="m-4">
-      {props.todolist.map((todo) => (
+      {props.todoList.map((todo) => (
         <TodoItem
+          key={todo.todo_id}
           todo={todo}
           editTodo={editTodo}
-          updateTodoList={props.updateTodoList}
-          updateCompletedTodos={props.updateCompletedTodos}
+          setTodoList={props.setTodoList}
+          setCompletedTodos={props.setCompletedTodos}
         />
       ))}
     </ul>
