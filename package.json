@@ -42,6 +42,8 @@
   "devDependencies": {
     "autoprefixer": "^10.0.0",
     "postcss-cli": "^7.1.2"
+  },
+  "engines": {
+    "node": "12.16.1"
   }
-
 }
