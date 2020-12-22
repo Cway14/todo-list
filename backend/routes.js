@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const path = require("path");
 const cors = require("cors");
 const pool = require("./db");
 
@@ -8,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 // web page serving
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "../frontend/build")));
 
 //create todo
 app.post("/todos", async (req, res) => {
@@ -113,5 +114,5 @@ app.delete("/completed/:id", async (req, res) => {
 
 const PORT = process.env.port || 5000;
 app.listen(PORT, () => {
-  console.log("Server is running on port 5000...");
+  console.log(`Server is running on port ${PORT}...`);
 });
