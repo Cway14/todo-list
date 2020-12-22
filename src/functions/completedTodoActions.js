@@ -16,9 +16,8 @@ export const addTodoToCompletedTable = async (todo, setCompletedTodos) => {
   getCompletedTodos(setCompletedTodos);
 };
 
-export const deleteCompleted = async (id) => {
+export const deleteCompleted = async (id, setCompletedTodos) => {
   try {
-    console.log(id);
     const response = await fetch(`http://192.168.1.26:5000/completed/${id}`, {
       method: "DELETE",
     });
@@ -26,6 +25,7 @@ export const deleteCompleted = async (id) => {
   } catch (err) {
     console.error(err.message);
   }
+  getCompletedTodos(setCompletedTodos);
 };
 
 export const getCompletedTodos = async (setCompletedTodos) => {

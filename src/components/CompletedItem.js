@@ -16,7 +16,7 @@ const CompletedItem = (props) => {
         <button
           className=" h-8 m-2 mr-8 stroke-current text-red-500"
           onClick={() => {
-            deleteCompleted(todo.id, props.updateCompletedTodos);
+            deleteCompleted(todo.id, props.setCompletedTodos);
           }}
         >
           <svg

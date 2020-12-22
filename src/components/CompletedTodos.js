@@ -6,7 +6,7 @@ import ShowCompletedButton from "./ShowCompletedButton";
 
 const CompletedTodos = (props) => {
   const [showCompleted, toggleShowCompleted] = useState(false);
-  const updateCompletedTodos = props.updateCompletedTodos;
+  const setCompletedTodos = props.setCompletedTodos;
   const completedTodos = props.completedTodos;
 
   return (
@@ -24,7 +24,7 @@ const CompletedTodos = (props) => {
             <CompletedItem
               key={todo.id}
               todo={todo}
-              updateCompletedTodos={updateCompletedTodos}
+              setCompletedTodos={setCompletedTodos}
             />
           ))}
         </ul>
