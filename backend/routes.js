@@ -11,8 +11,8 @@ app.use(express.json());
 // web page serving
 app.use(express.static(path.join(__dirname, "../frontend/build")));
 
-app.get("/", function (req, res) {
-  res.send("<h1>Hello World!</h1>");
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 //create todo
