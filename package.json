@@ -6,7 +6,6 @@
   "scripts": {
     "start": "nodemon backend/routes.js",
     "heroku-postbuild": "cd frontend && npm && npm run build"
-}
   },
   "repository": {
     "type": "git",
