@@ -5,7 +5,7 @@ const pool = new Pool({
   user: "postgres",
   port: 5432,
   database: "todoapp",
-  password: process.env.PORT,
+  password: process.env.DB_PASSWORD,
 });
 
 module.exports = pool;
