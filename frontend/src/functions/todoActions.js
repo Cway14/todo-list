@@ -54,7 +54,6 @@ export const deleteTodo = async (id, setTodoList) => {
 };
 
 export const getTodos = async (setTodoList) => {
-  console.log("Called");
   try {
     //get TODOS
     const response = await fetch("http://localhost/todos");
