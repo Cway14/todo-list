@@ -11,6 +11,10 @@ app.use(express.json());
 // web page serving
 app.use(express.static(path.join(__dirname, "../frontend/build")));
 
+app.get("/", function (req, res) {
+  res.send("<h1>Hello World!</h1>");
+});
+
 //create todo
 app.post("/todos", async (req, res) => {
   try {
@@ -38,6 +42,7 @@ app.get("/todos", async (req, res) => {
 
 //get a todo
 app.get("/todos/:id", async (req, res) => {
+  console.log("Getting Todos");
   try {
     const { id } = req.params;
     const todo = await pool.query("SELECT * FROM todos WHERE todo_id = $1", [
