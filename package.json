@@ -4,7 +4,9 @@
   "description": "Todo list using PERN stack",
   "main": "/backend/routes.js",
   "scripts": {
-    "start": "nodemon backend/routes.js"
+    "start": "nodemon backend/routes.js",
+    "heroku-postbuild": "cd frontend && npm && npm run build"
+}
   },
   "repository": {
     "type": "git",
