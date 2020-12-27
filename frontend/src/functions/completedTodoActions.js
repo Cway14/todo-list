@@ -2,7 +2,7 @@ export const addTodoToCompletedTable = async (todo, setCompletedTodos) => {
   try {
     const description = todo.description;
     const body = { description };
-    const response = await fetch(`http://todo.camway.ca/completed`, {
+    const response = await fetch(`http://localhost:5000/completed`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -18,7 +18,7 @@ export const addTodoToCompletedTable = async (todo, setCompletedTodos) => {
 
 export const deleteCompleted = async (id, setCompletedTodos) => {
   try {
-    const response = await fetch(`http://todo.camway.ca/completed/${id}`, {
+    const response = await fetch(`http://localhost:5000/completed/${id}`, {
       method: "DELETE",
     });
     console.log(response);
@@ -30,7 +30,7 @@ export const deleteCompleted = async (id, setCompletedTodos) => {
 
 export const getCompletedTodos = async (setCompletedTodos) => {
   try {
-    const response = await fetch("http://todo.camway.ca/completed");
+    const response = await fetch("http://localhost:5000/completed");
     const JSONData = await response.json();
     setCompletedTodos(JSONData);
   } catch (err) {
