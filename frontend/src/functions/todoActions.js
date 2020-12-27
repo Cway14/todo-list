@@ -56,7 +56,7 @@ export const deleteTodo = async (id, setTodoList) => {
 export const getTodos = async (setTodoList) => {
   try {
     //get TODOS
-    const response = await fetch("http://todo.camway.ca/todos");
+    const response = await fetch("http://localhost:5000/todos");
     const JSONData = await response.json();
     //store TODOS
     setTodoList(JSONData);

@@ -1,10 +1,12 @@
+const dontenv = require("dotenv");
+dontenv.config();
 const Pool = require("pg").Pool;
 
 const pool = new Pool({
-  host: "todo-app.c0wzpvypzwda.ca-central-1.rds.amazonaws.com",
-  user: "postgres",
+  host: process.env.DB_ENDPOINT,
+  user: process.env.DB_USER,
   port: 5432,
-  database: "todoapp",
+  database: process.env.DB,
   password: process.env.DB_PASSWORD,
 });
 
