@@ -5,7 +5,7 @@ export const addTodoToCompletedTable = async (todo, setCompletedTodos) => {
   try {
     const description = todo.description;
     const body = { description };
-    const response = await fetch(`${process.env.ROUTE_URL}/completed`, {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/completed`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -21,9 +21,12 @@ export const addTodoToCompletedTable = async (todo, setCompletedTodos) => {
 
 export const deleteCompleted = async (id, setCompletedTodos) => {
   try {
-    const response = await fetch(`${process.env.ROUTE_URL}/completed/${id}`, {
-      method: "DELETE",
-    });
+    const response = await fetch(
+      `${process.env.REACT_APP_API_URL}/completed/${id}`,
+      {
+        method: "DELETE",
+      }
+    );
     console.log(response);
   } catch (err) {
     console.error(err.message);
@@ -33,7 +36,7 @@ export const deleteCompleted = async (id, setCompletedTodos) => {
 
 export const getCompletedTodos = async (setCompletedTodos) => {
   try {
-    const response = await fetch(`${process.env.ROUTE_URL}/completed`);
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/completed`);
     const JSONData = await response.json();
     setCompletedTodos(JSONData);
   } catch (err) {
