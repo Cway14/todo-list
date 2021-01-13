@@ -11,10 +11,11 @@
     "cra-template": "^1.0.3",
     "dotenv": "^8.2.0",
     "pg": "^8.5.1",
+    "postcss": "^8.2.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "^3.4.3",
-    "tailwindcss": "^1.9.6"
+    "tailwindcss": "^2.0.2"
   },
   "scripts": {
     "build:tailwind": "tailwindcss build src/css/styles.css -o src/css/tailwind.output.css",
@@ -41,7 +42,7 @@
     ]
   },
   "devDependencies": {
-    "autoprefixer": "^10.0.0",
+    "autoprefixer": "^10.1.0",
     "postcss-cli": "^7.1.2"
   },
   "engines": {
