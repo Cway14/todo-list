@@ -41,7 +41,7 @@ function App() {
       <div
         className={`${
           showMenu ? "w-full sm:w-1/3" : "w-0"
-        } z-20 absolute top-0 left-0 transition-width duration-700 overflow-hidden`}
+        } z-20 fixed bottom-0 left-0 transition-width duration-700 overflow-hidden`}
       >
         <Sidebar
           categories={categories}
