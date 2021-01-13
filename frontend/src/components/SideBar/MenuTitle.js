@@ -1,6 +1,6 @@
 import React from "react";
 
-const MenuTitle = () => {
+const MenuTitle = (props) => {
   return (
     <h1 className="w-full text-center p-2 pb-3 border-b text-xl font-bold shadow-sm bg-gray-700 text-white flex justify-center items-center">
       <a href="https://github.com/Cway14/todo-list">
@@ -15,6 +15,18 @@ const MenuTitle = () => {
         </svg>
       </a>
       Lists
+      <button
+        className="absolute right-0 top-0 p-2"
+        onClick={() => props.toggleMenu(false)}
+      >
+        <svg
+          className="fill-current text-white h-8 w-8"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+        >
+          <path d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" />
+        </svg>
+      </button>
     </h1>
   );
 };

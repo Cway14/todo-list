@@ -18,7 +18,7 @@ const Sidebar = (props) => {
   return (
     <div className="relative h-screen bg-gray-100 w-full z-0">
       <div>
-        <MenuTitle />
+        <MenuTitle toggleMenu={props.toggleMenu}/>
         <ul className="my-2">
           {categories.map((category) => {
             return (
