@@ -1,10 +1,14 @@
 const dotenv = require("dotenv");
 dotenv.config();
 
-export const addTodoToCompletedTable = async (todo, setCompletedTodos) => {
+export const addTodoToCompletedTable = async (
+  todo,
+  setCompletedTodos,
+  category_id
+) => {
   try {
     const description = todo.description;
-    const body = { description };
+    const body = { description, category_id };
     const response = await fetch(`${process.env.REACT_APP_API_URL}/completed`, {
       method: "POST",
       headers: {

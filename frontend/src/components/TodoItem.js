@@ -7,7 +7,7 @@ const TodoItem = (props) => {
   const todo = props.todo;
   return (
     <li
-      className="m-2 py-2 rounded-lg bg-gray-200 flex justify-between items-center"
+      className="m-2 py-2 rounded-lg bg-gray-100 flex justify-between items-center"
       key={todo.todo_id}
     >
       <span className="mx-2 text-xl sm:mx-12 sm:text-2xl">
@@ -22,7 +22,12 @@ const TodoItem = (props) => {
         <button
           className="m-2"
           onClick={() => {
-            completeTodo(todo, props.setTodoList, props.setCompletedTodos);
+            completeTodo(
+              todo,
+              props.setTodoList,
+              props.setCompletedTodos,
+              props.currentCategory.id
+            );
           }}
         >
           <SVG id={1} />

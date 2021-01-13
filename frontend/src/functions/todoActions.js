@@ -2,12 +2,10 @@ import { addTodoToCompletedTable } from "./completedTodoActions";
 import dotenv from "dotenv";
 dotenv.config();
 
-console.log(process.env.REACT_APP_API_URL);
-
-export const addTodo = async (e, description, setTodoList) => {
+export const addTodo = async (e, description, category_id, setTodoList) => {
   e.preventDefault();
   try {
-    const body = { description };
+    const body = { description, category_id };
     const response = await fetch(`${process.env.REACT_APP_API_URL}/todos`, {
       method: "POST",
       headers: {
@@ -43,8 +41,13 @@ export const sendEdit = async (todo) => {
   }
 };
 
-export const completeTodo = (todo, setTodoList, setCompletedTodos) => {
-  addTodoToCompletedTable(todo, setCompletedTodos);
+export const completeTodo = (
+  todo,
+  setTodoList,
+  setCompletedTodos,
+  category_id
+) => {
+  addTodoToCompletedTable(todo, setCompletedTodos, category_id);
   deleteTodo(todo.todo_id, setTodoList);
 };
 
@@ -71,6 +74,7 @@ export const getTodos = async (setTodoList) => {
     const JSONData = await response.json();
     //store TODOS
     setTodoList(JSONData);
+    return JSONData;
   } catch (err) {
     console.error(err.message);
   }

@@ -18,8 +18,8 @@ const Modal = (props) => {
   };
 
   return (
-    <div className="absolute w-full h-full flex justify-center items-center">
-      <div className="z-10 w-full h-full bg-black opacity-50"></div>
+    <div className="absolute top-0 w-full h-full flex justify-center items-center">
+      <div className="z-10 w-screen h-screen bg-black opacity-50"></div>
       <div className="z-20 fixed bg-white rounded-lg">
         <div className="py-4 px-20">
           <h1 className="text-3xl w-full text-center">Edit Todo</h1>
