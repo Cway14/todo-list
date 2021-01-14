@@ -15,7 +15,7 @@ const TodoList = (props) => {
   const todoList = props.todoList.filter(checkCategory);
 
   return (
-    <ul className="mx-4 mt-32 mb-16">
+    <ul className="sm:mx-4 mt-32 mb-16">
       {todoList.map((todo) => (
         <TodoItem
           key={todo.todo_id}
