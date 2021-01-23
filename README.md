@@ -1,6 +1,6 @@
 # Todo List App
 
-Can be found at [`todo.camway.ca`](http://todo.camway.ca)
+Application can be found at [`todo.camway.ca`](http://todo.camway.ca)
 
 ![GIF demo](img/demo.gif)
 
