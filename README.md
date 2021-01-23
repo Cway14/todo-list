@@ -1,6 +1,6 @@
 # Todo List App
 
-[![react](./img/react.svg)](https://aleen42.github.io/badges/src/react.svg)[![node](./img/node.svg)](https://aleen42.github.io/badges/src/node.svg)
+[![react](./img/react.svg)](https://aleen42.github.io/badges/src/react.svg) [![node](./img/node.svg)](https://aleen42.github.io/badges/src/node.svg)
 
 Application can be found at [`todo.camway.ca`](http://todo.camway.ca)
 
